@@ -15,7 +15,14 @@ async function main(){
         "./SimpleStorage_sol_SimpleStorage.abi", 
         "utf8"
     );
-    
+    const binary  = fs.readFileSync(
+        "./SimpleStorage_sol_SimpleStorage,.bin",
+        "utf8"
+    );
+    const contractFactory = new ethers.contractFactory(abi,binary,wallet);
+    console.log("Deploying, please wait ...");
+    const contract = await contractFactory.deploy(); // Stop here! 
+ 
 }
 
 
